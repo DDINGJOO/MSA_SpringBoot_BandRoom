@@ -1,15 +1,11 @@
 package dding.bandroom.dto;
 
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @ToString
 @RequiredArgsConstructor
-@NoArgsConstructor
 public class BandRoomCreateRequest {
     private String bandName;
     private String bandNumber;
