@@ -2,9 +2,7 @@ package dding.bandroom.entity;
 
 
 import jakarta.annotation.Nullable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -16,11 +14,13 @@ import lombok.*;
 public class BandRoom {
 
     @Id
+    @GeneratedValue
     private long BandRoomId;
     private long adminId;
 
     private String BandRoomName;
     private String BandRoomNumber;
+
 
     @Nullable
     private String BandRoomEmail;

@@ -1,11 +1,11 @@
 server:
-  port: 9020
+  port: 9021
 spring:
   application:
-    name: dding-bandroom-room-service
+    name: dding-bandroom-roomInfo-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/bandroom
+    url: jdbc:mysql://127.0.0.1:3306/room-info
     username: root
     password: 1001
   jpa:
@@ -14,7 +14,3 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
-
-
-address-service:
-  url: http://localhost:9022

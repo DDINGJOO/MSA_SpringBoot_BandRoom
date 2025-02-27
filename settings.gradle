@@ -5,6 +5,7 @@ include 'service:room'
 include 'service:room-info'
 include 'service:room-product'
 include 'service:room-admin'
+include 'service:room-address'
 
 include 'consumer'
 include 'consumer:room-review'
