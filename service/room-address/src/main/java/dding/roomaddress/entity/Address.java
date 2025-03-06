@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class Address {
 
     @Id
-    private Long id; // Store ID와 동일한 값
+    private Long id; // Room-info ID와 동일한 값
 
     private String addressName; // 전체 주소
     private String roadAddressName; // 도로명 주소

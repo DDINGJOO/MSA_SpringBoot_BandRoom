@@ -15,3 +15,8 @@ CREATE TABLE room_address (
                          modified_at DATETIME
 
 );
+ALTER TABLE room_address ADD INDEX idx_district_town (district, town);
+ALTER TABLE room_address ADD SPATIAL INDEX idx_location (latitude, longitude);
+ALTER TABLE room_address ADD INDEX idx_city (city);
+ALTER TABLE room_address ADD INDEX idx_city_district (city, district);
+ALTER TABLE room_address ADD INDEX idx_city_district_town (city, district, town);

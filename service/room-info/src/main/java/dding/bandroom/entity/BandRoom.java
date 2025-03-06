@@ -21,7 +21,6 @@ public class BandRoom {
     private String BandRoomName;
     private String BandRoomNumber;
 
-
     @Nullable
     private String BandRoomEmail;
     private String BandRoomEmailDomain;

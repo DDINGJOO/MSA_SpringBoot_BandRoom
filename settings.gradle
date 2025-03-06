@@ -2,10 +2,14 @@ rootProject.name = 'msa_BandRoom'
 
 include 'service'
 include 'service:room'
+include 'service-room-content'
 include 'service:room-info'
 include 'service:room-product'
 include 'service:room-admin'
 include 'service:room-address'
+include 'service:room-studio'
+include 'service:studio'
+
 
 include 'consumer'
 include 'consumer:room-review'
