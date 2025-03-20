@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Table(name = "room_address")
-@NoArgsConstructor (access =  AccessLevel.PROTECTED)
+@NoArgsConstructor
 @ToString
 @Entity
 public class Address {

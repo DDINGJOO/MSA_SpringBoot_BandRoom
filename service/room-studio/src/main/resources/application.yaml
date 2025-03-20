@@ -1,11 +1,11 @@
 server:
-  port: 9022
+  port: 9025
 spring:
   application:
-    name: dding-bandroom-address-service
+    name: dding-bandroom-studio-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/room_address
+    url: jdbc:mysql://127.0.0.1:3306/studio
     username: root
     password: 1001
   jpa:
@@ -14,8 +14,3 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
-
-kakao:
-  api:
-    url: https://dapi.kakao.com/v2/local/search/address.json
-    key: 8da5ca008a870b8816d3e254e2c2ad5e

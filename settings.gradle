@@ -11,5 +11,13 @@ include 'service:room-studio'
 include 'service:studio'
 
 
+
+include 'servicev2'
+include 'servicev2:HRoom'
+include 'servicev2:HRoomStudio'
+include 'servicev2:HRoomReview'
+
+
+
 include 'consumer'
 include 'consumer:room-review'
