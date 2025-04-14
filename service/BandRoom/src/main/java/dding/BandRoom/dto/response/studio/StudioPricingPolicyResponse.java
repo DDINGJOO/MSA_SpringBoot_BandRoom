@@ -12,4 +12,5 @@ public class StudioPricingPolicyResponse {
     private String endTime;
     private int price;
     private boolean isHoliday;
+    private String pricePoliciesDescription;
 }

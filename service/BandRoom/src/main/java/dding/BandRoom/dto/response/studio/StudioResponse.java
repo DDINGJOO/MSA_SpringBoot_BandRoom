@@ -13,4 +13,5 @@ public class StudioResponse {
     private String description;
     private Integer defaultPrice;
     private List<String> imageUrls;
+    private String pricePoliciesDescription;
 }

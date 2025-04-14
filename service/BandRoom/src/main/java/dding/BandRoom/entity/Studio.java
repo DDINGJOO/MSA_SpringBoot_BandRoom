@@ -26,6 +26,7 @@ public class Studio {
     private String description;
 
     private Integer defaultPrice; // 기본 요금 (없으면 정책 기반으로만 운영)
+    private String pricePoliciesDescription; //가격 정책 상세 성명
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "band_room_id")

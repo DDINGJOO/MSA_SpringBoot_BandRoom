@@ -27,6 +27,7 @@ public class StudioService {
                 .name(request.getName())
                 .description(request.getDescription())
                 .defaultPrice(request.getDefaultPrice())
+                .pricePoliciesDescription(request.getPricePoliciesDescription())
                 .imageUrls(request.getImageUrls())
                 .bandRoom(bandRoom)
                 .build();
@@ -43,6 +44,7 @@ public class StudioService {
                 .id(studio.getId())
                 .name(studio.getName())
                 .description(studio.getDescription())
+                .pricePoliciesDescription(studio.getPricePoliciesDescription())
                 .defaultPrice(studio.getDefaultPrice())
                 .imageUrls(studio.getImageUrls())
                 .build();

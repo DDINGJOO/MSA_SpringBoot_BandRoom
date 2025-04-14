@@ -15,5 +15,6 @@ public class StudioRequest {
     private String name;
     private String description;
     private Integer defaultPrice;
+    private String pricePoliciesDescription;
     private List<String> imageUrls;
 }

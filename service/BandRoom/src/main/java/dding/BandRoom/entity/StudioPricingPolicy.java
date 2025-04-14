@@ -28,5 +28,6 @@ public class StudioPricingPolicy {
 
     private int price;
     private boolean isHoliday; // 공휴일용 요금 정책 여부
+    private String pricePoliciesDescription;
 }
 

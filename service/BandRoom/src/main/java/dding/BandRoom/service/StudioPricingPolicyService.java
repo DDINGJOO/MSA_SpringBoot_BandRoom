@@ -31,6 +31,7 @@ public class StudioPricingPolicyService {
                 .startTime(LocalTime.parse(request.getStartTime()))
                 .endTime(LocalTime.parse(request.getEndTime()))
                 .price(request.getPrice())
+                .pricePoliciesDescription(request.getPricePoliciesDescription())
                 .isHoliday(request.isHoliday())
                 .build();
 
@@ -46,6 +47,7 @@ public class StudioPricingPolicyService {
                         .startTime(p.getStartTime().toString())
                         .endTime(p.getEndTime().toString())
                         .price(p.getPrice())
+                        .pricePoliciesDescription(p.getPricePoliciesDescription())
                         .isHoliday(p.isHoliday())
                         .build())
                 .toList();

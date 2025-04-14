@@ -1,4 +1,4 @@
 package dding.reservation.service;
 
-public class ReservationServcie {
+public class ReservationService {
 }
