@@ -16,6 +16,7 @@ public class Studio {
 
     @Id
     private String id;
+//    private String userId;
 
     private String name;
 
@@ -32,6 +33,4 @@ public class Studio {
     @JoinColumn(name = "band_room_id")
     private BandRoom bandRoom;
 
-    @OneToMany(mappedBy = "studio", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<StudioPricingPolicy> pricingPolicies;
 }

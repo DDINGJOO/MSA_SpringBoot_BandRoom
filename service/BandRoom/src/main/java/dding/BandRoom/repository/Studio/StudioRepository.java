@@ -10,5 +10,5 @@ import java.time.LocalTime;
 
 @Repository
 public interface StudioRepository extends JpaRepository<Studio, String> {
-    boolean existsReservationDuring(String id, LocalDate date, LocalTime startTime, LocalTime endTime);
+
 }

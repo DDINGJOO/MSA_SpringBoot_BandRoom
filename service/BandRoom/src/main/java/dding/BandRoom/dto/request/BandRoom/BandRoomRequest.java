@@ -11,13 +11,16 @@ import java.util.List;
 @AllArgsConstructor
 public class BandRoomRequest {
 
+    private String id;
     private String name;
     private String shortDescription;
+//    private String userId;
     private String detailedDescription;
 
     private String phone;
     private Boolean parkingAvailable;
     private String displayAddress;
+    private String parkingDescription;
 
     private List<String> keywords;
     private List<String> homepageUrls;

@@ -13,8 +13,7 @@ public class BandRoomSpecification {
     public static Specification<BandRoom> searchWithFilters(
             String name,
             String keyword,
-            Boolean isOpen,
-            Boolean available
+            String roadAddress
     ) {
         return (root, query, cb) -> {
             List<Predicate> predicates = new ArrayList<>();
@@ -27,13 +26,13 @@ public class BandRoomSpecification {
                 predicates.add(cb.like(cb.lower(root.get("keywords")), "%" + keyword.toLowerCase() + "%"));
             }
 
-            if (isOpen != null) {
-                predicates.add(cb.equal(root.get("isOpen"), isOpen));
+            if (roadAddress != null && !roadAddress.isBlank()) {
+                predicates.add(cb.like(cb.lower(root.get("roadAddress")), "%" + roadAddress.toLowerCase() + "%"));
             }
 
-            if (available != null) {
-                predicates.add(cb.equal(root.get("isAvailable"), available));
-            }
+
+
+
 
             return cb.and(predicates.toArray(new Predicate[0]));
         };

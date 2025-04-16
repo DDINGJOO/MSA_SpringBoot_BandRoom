@@ -1,4 +1,5 @@
-package dding.BandRoom.entity;
+package dding.reservation.entity;
+
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -17,17 +18,11 @@ public class StudioPricingPolicy {
     @Id
     private String id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "studio_id")
-    private Studio studio;
-
+    private String studioId;
     private int dayOfWeek; // 1=월 ~ 7=일
-
     private LocalTime startTime;
     private LocalTime endTime;
 
     private int price;
-    private boolean isHoliday; // 공휴일용 요금 정책 여부
     private String pricePoliciesDescription;
 }
-

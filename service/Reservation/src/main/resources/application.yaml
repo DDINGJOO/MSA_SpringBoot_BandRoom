@@ -7,10 +7,10 @@ spring:
 
 
   application:
-    name: dding-user-review-service
+    name: dding-user-product-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://host.docker.internal:3306/reservation
+    url: jdbc:mysql://localhost:3306/product
     username: root
     password: 1001
   jpa:

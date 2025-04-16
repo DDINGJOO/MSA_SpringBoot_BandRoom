@@ -1,8 +1,6 @@
 package dding.BandRoom.controller;
 
 import dding.BandRoom.dto.request.studio.StudioPricingPolicyRequest;
-import dding.BandRoom.dto.response.studio.StudioPricingPolicyResponse;
-import dding.BandRoom.service.StudioPricingPolicyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +13,7 @@ import java.util.List;
 public class StudioPricingPolicyController {
 
     private final StudioPricingPolicyService pricingPolicyService;
+
 
     @PostMapping
     public ResponseEntity<String> create(@PathVariable String studioId,
@@ -32,4 +31,17 @@ public class StudioPricingPolicyController {
         pricingPolicyService.delete(policyId);
         return ResponseEntity.noContent().build();
     }
+
+
+//    @GetMapping("/calculate")
+//    public ResponseEntity<ReservationPriceResponse> calculatePrice(
+//            @RequestParam String studioId,
+//            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
+//            @RequestParam int startHour,
+//            @RequestParam int duration
+//    ) {
+//        ReservationPriceResponse response =
+//                pricingPolicyService.calculateReservationPrice(studioId, date, startHour, duration);
+//        return ResponseEntity.ok(response);
+//    }
 }

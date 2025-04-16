@@ -11,4 +11,6 @@ import java.util.List;
 public interface BandRoomScheduleRuleRepository  extends JpaRepository<BandRoomScheduleRule, String> {
     List<BandRoomScheduleRule> findByBandRoomId(String bandRoomId);
 
+    void deleteAllByBandRoomId(String bandRoomId);
+
 }

@@ -10,7 +10,6 @@ import java.util.List;
 @Setter
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 @RequiredArgsConstructor
 @Table(name = "band_room")
 @Entity
@@ -18,6 +17,8 @@ public class BandRoom {
 
     @Id
     private String id;
+
+//    private String userId;
 
     private String name;
 
@@ -32,28 +33,30 @@ public class BandRoom {
 
     private String phone;
     private Boolean parkingAvailable;
+    private String parkingDescription;
     private String displayAddress; // 사용자 편의를 위한 주소 설명
 
 
+    @Singular
     @ElementCollection
-    private List<String> keywords = new ArrayList<>(); // 필터링 키워드
+    private List<String> keywords;
 
+    @Singular
     @ElementCollection
-    private List<String> homepageUrls = new ArrayList<>(); // 여러 개의 홈페이지 링크
+    private List<String> homepageUrls;
 
     @Lob
     private String notes; // 특이사항 자유기입란
 
     @OneToMany(mappedBy = "bandRoom", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Studio> studios = new ArrayList<>();
+    private final List<Studio> studios = new ArrayList<>(); //스튜디오들의 정보들
 
     @OneToMany(mappedBy = "bandRoom", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<BandRoomScheduleRule> scheduleRules = new ArrayList<>();
+    private final List<BandRoomScheduleRule> scheduleRules = new ArrayList<>();
 
     @OneToMany(mappedBy = "bandRoom", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<SpecialClosedDay> specialClosedDays = new ArrayList<>();
+    private final List<SpecialClosedDay> specialClosedDays = new ArrayList<>();
 
-    private String Keyword;
 
 
 

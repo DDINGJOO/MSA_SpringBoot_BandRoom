@@ -11,13 +11,29 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/band-rooms/{bandRoomId}/schedule-rules")
+@RequestMapping("/api/band-rooms/schedule-rules/{bandRoomId}")
 @RequiredArgsConstructor
 public class BandRoomScheduleRuleController {
 
     private final BandRoomScheduleRuleService ruleService;
 
     @PostMapping
+    public ResponseEntity<String> create(
+            @PathVariable String bandRoomId,
+            @RequestBody List<BandRoomScheduleRuleRequest> requests
+    ) {
+        return ResponseEntity.ok(ruleService.saveAll(bandRoomId, requests));
+    }
+
+    @PutMapping
+    public ResponseEntity<String> update(
+            @PathVariable String bandRoomId,
+            @RequestBody List<BandRoomScheduleRuleRequest> requests
+    ) {
+        return ResponseEntity.ok(ruleService.saveAll(bandRoomId, requests));
+    }
+
+    @PostMapping("/single")
     public ResponseEntity<String> create(
             @PathVariable String bandRoomId,
             @RequestBody BandRoomScheduleRuleRequest request
@@ -35,6 +51,12 @@ public class BandRoomScheduleRuleController {
     @DeleteMapping("/{ruleId}")
     public ResponseEntity<Void> delete(@PathVariable String ruleId) {
         ruleService.delete(ruleId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/all/{BandRoomId}")
+    public ResponseEntity<Void> deleteAll(@PathVariable String BandRoomId) {
+        ruleService.deleteAll(BandRoomId);
         return ResponseEntity.noContent().build();
     }
 }

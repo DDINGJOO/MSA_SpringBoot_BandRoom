@@ -31,4 +31,12 @@ public class BandRoomScheduleRule {
 
     private Boolean isClosed;
     private Boolean isOddWeek;
+
+    public boolean isOddWeek() {
+        return this.isOddWeek;
+    }
+
+    public boolean isClosed() {
+        return this.isOddWeek;
+    }
 }

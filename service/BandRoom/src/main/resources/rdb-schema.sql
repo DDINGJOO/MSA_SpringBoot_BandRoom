@@ -4,11 +4,12 @@ CREATE TABLE band_room (
                            short_description VARCHAR(500),
                            detailed_description TEXT,
                            phone VARCHAR(100),
+                           user_Id VARCHAR(100),
                            parking_available BOOLEAN,
                            display_address VARCHAR(255),
                            notes TEXT,
-                           keyword VARCHAR(255),
                            thumbnail_url VARCHAR(500),
+                           parking_description VARCHAR(500),
                            road_address VARCHAR(255),
                            detail_address VARCHAR(255),
                            latitude DOUBLE,
@@ -18,8 +19,16 @@ CREATE TABLE band_room (
 -- 인덱스 (조회 성능 개선용)
 CREATE INDEX idx_band_room_name ON band_room(name);
 CREATE INDEX idx_band_room_lat_lng ON band_room(latitude, longitude);
-
-
+CREATE TABLE band_room_homepage_urls (
+                                           band_room_id VARCHAR(255) NOT NULL,
+                                           homepage_urls VARCHAR(255),
+                                           CONSTRAINT fk_bandroom_homepage FOREIGN KEY (band_room_id) REFERENCES band_room(id)
+  );
+CREATE TABLE band_room_keywords (
+                                    band_room_id VARCHAR(255) NOT NULL,
+                                    keywords VARCHAR(255),
+                                    FOREIGN KEY (band_room_id) REFERENCES band_room(id)
+);
 CREATE TABLE studio (
                         id VARCHAR(255) PRIMARY KEY,
                         name VARCHAR(255),

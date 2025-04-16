@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class StudioRequest {
     private String name;
+//    private String userId;
     private String description;
     private Integer defaultPrice;
     private String pricePoliciesDescription;
