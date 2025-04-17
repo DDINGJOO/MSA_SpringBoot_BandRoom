@@ -5,7 +5,12 @@ dependencies {
     runtimeOnly 'com.mysql:mysql-connector-j:8.2.0'
     annotationProcessor "jakarta.persistence:jakarta.persistence-api"
     annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
 }
 
-
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2022.0.5" // 너 Spring Boot 3.1.x 기준
+    }
+}

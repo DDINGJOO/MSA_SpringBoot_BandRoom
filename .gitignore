@@ -32,6 +32,7 @@ out/
 /dist/
 /nbdist/
 /.nb-gradle/
+/service/BandRoom/src/main/resources/application.yaml
 
 ### VS Code ###
 .vscode/

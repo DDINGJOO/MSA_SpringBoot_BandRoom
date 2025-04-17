@@ -4,6 +4,7 @@ package dding.reservation.controller;
 import dding.reservation.dto.request.ProductCreateRequest;
 import dding.reservation.dto.request.ProductUpdateRequest;
 import dding.reservation.dto.response.ProductResponse;
+import dding.reservation.entity.Product;
 import dding.reservation.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +31,16 @@ public class ProductController {
     {
         return ResponseEntity.ok(productService.getProductByBandRoomId(ProductId));
     }
+
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable String id )
+    {
+        productService.deleteProduct(id);
+        return ResponseEntity.ok("삭제 성공");
+
+    }
+
 
     @GetMapping("/all/{BandRoomId}")
     public ResponseEntity<List<ProductResponse>> getAllProduct(@PathVariable String BandRoomId )

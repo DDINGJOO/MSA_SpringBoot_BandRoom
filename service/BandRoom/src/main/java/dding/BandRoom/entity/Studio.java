@@ -32,5 +32,8 @@ public class Studio {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "band_room_id")
     private BandRoom bandRoom;
+    private boolean isAvailable;
+
+
 
 }

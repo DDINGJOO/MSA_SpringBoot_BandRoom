@@ -19,3 +19,7 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
+
+
+client:
+  TimemanagerUrl: http://192.168.200.101:9202

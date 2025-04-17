@@ -6,8 +6,11 @@ import dding.BandRoom.entity.BandRoom;
 import dding.BandRoom.entity.Studio;
 import dding.BandRoom.repository.BandRoom.BandRoomRepository;
 import dding.BandRoom.repository.Studio.StudioRepository;
+import jakarta.persistence.Temporal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.servlet.function.EntityResponse;
 
 import java.util.UUID;
 
@@ -30,10 +33,29 @@ public class StudioService {
                 .pricePoliciesDescription(request.getPricePoliciesDescription())
                 .imageUrls(request.getImageUrls())
                 .bandRoom(bandRoom)
+                .isAvailable(false)
                 .build();
 
         studioRepository.save(studio);
         return studio.getId();
+    }
+
+    @Transactional
+    public EntityResponse<?> setAvailable(String studioId)
+    {
+        Studio studio = studioRepository.findById(studioId)
+                .orElseThrow(() -> new RuntimeException("Studio not found"));
+        if(studio.isAvailable())
+        {
+            studio.setAvailable(false);
+        }
+        else
+        {
+            studio.setAvailable(true);
+        }
+        studioRepository.save(studio);
+
+
     }
 
     public StudioResponse getStudio(String studioId) {

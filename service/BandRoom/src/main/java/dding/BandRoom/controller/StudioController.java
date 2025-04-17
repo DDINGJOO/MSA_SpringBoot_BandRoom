@@ -25,6 +25,13 @@ public class StudioController {
         return ResponseEntity.ok(studioService.getStudio(studioId));
     }
 
+
+    @PutMapping("/{studioId}")
+    public ResponseEntity<?> changeAvailable(@PathVariable String studioId)
+    {
+        return ResponseEntity.ok(studioService.setAvailable(studioId));
+    }
+
     @DeleteMapping("/{studioId}")
     public ResponseEntity<Void> delete(@PathVariable String studioId) {
         studioService.deleteStudio(studioId);

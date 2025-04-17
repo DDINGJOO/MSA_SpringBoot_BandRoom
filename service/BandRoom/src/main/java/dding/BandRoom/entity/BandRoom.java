@@ -51,11 +51,7 @@ public class BandRoom {
     @OneToMany(mappedBy = "bandRoom", cascade = CascadeType.ALL, orphanRemoval = true)
     private final List<Studio> studios = new ArrayList<>(); //스튜디오들의 정보들
 
-    @OneToMany(mappedBy = "bandRoom", cascade = CascadeType.ALL, orphanRemoval = true)
-    private final List<BandRoomScheduleRule> scheduleRules = new ArrayList<>();
 
-    @OneToMany(mappedBy = "bandRoom", cascade = CascadeType.ALL, orphanRemoval = true)
-    private final List<SpecialClosedDay> specialClosedDays = new ArrayList<>();
 
 
 
